@@ -1,8 +1,35 @@
+/*
 {
     "name": "CRUD Productos - .NET 8",
     "image": "mcr.microsoft.com/devcontainers/dotnet:8.0-noble",
     "forwardPorts": [5000],
     "postCreateCommand": "dotnet restore",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-dotnettools.csharp"
+            ]
+        }
+    }
+}
+*/
+
+{
+    "name": "CRUD Productos - .NET 8",
+
+    "image": "mcr.microsoft.com/devcontainers/dotnet:8.0-noble",
+
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    },
+
+    "forwardPorts": [
+        5000,
+        1433
+    ],
+
+    "postCreateCommand": "dotnet restore Backend/Backend.csproj",
+
     "customizations": {
         "vscode": {
             "extensions": [
